@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "06b56183-8cde-47a4-bfa9-f237b8d117e3",
+		"name": "CRUD SQL Node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4003/api/tutorials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"api",
+						"tutorials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\":10,\r\n        \"title\": \"Title #10\",\r\n        \"description\": \"Description #10\",\r\n        \"published\": true,\r\n        \"createdAt\": \"2022-03-22T10:05:14.543Z\",\r\n        \"updatedAt\": \"2022-03-22T10:05:14.543Z\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4003/api/tutorials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"api",
+						"tutorials"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find one by pk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4003/api/tutorials/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"api",
+						"tutorials",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update data ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"published\": false,\r\n    \"updatedAt\": \"2022-03-22T10:05:47.543Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4003/api/tutorials/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"api",
+						"tutorials",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4003/api/tutorials/?title=Title %231",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"api",
+						"tutorials",
+						""
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Title #1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find all published",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4003/api/tutorials/published",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"api",
+						"tutorials",
+						"published"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete one row",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4003/api/tutorials/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"api",
+						"tutorials",
+						"9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

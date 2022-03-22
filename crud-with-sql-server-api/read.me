@@ -1,0 +1,121 @@
+https://github.com/bezkoder/node-js-mssql-crud-example
+-> npm init
+-> npm install express sequelize tedious cors --save
+-> npm install mssql
+===============================================================
+After initializing Sequelize, we don’t need to write CRUD functions, Sequelize supports all of them:-
+create a new Tutorial: create(object)
+find a Tutorial by id: findByPk(id)
+get all Tutorials: findAll()
+update a Tutorial by id: update(data, where: { id: id })
+remove a Tutorial: destroy(where: { id: id })
+remove all Tutorials: destroy(where: {})
+find all Tutorials by title: findAll({ where: { title: ... } })
+===============================================================
+Methods	    Urls	                    Actions
+GET	    api/tutorials	            get all Tutorials
+GET	    api/tutorials/:id	        get Tutorial by id
+POST	api/tutorials	            add new Tutorial
+PUT	    api/tutorials/:id	        update Tutorial by id
+DELETE	api/tutorials/:id	        remove Tutorial by id
+DELETE	api/tutorials	            remove all Tutorials
+GET	    api/tutorials/published	    find all published Tutorials
+GET	    api/tutorials?title=[kw]	find all Tutorials which title contains 'kw'
+
+These are our routes:
+
+/api/tutorials: GET, POST, DELETE
+/api/tutorials/:id: GET, PUT, DELETE
+/api/tutorials/published: GET
+
+=================================
+demo data to insert:-
+[
+    {
+        "id":1,
+        "title": "Title #1",
+        "description": "Description #1",
+        "published": true,
+        "createdAt": "2022-03-22T10:05:14.543Z",
+        "updatedAt": "2022-03-22T10:05:14.543Z"
+    },
+    {
+        "id":2,
+        "title": "Title #2",
+        "description": "Description #2",
+        "published": true,
+        "createdAt": "2022-03-22T10:05:14.543Z",
+        "updatedAt": "2022-03-22T10:05:14.543Z"
+    },
+    {
+        "id":3,
+        "title": "Title #3",
+        "description": "Description #3",
+        "published": true,
+        "createdAt": "2022-03-22T10:05:14.543Z",
+        "updatedAt": "2022-03-22T10:05:14.543Z"
+    },
+    {
+        "id":4,
+        "title": "Title #4",
+        "description": "Description #4",
+        "published": true,
+        "createdAt": "2022-03-22T10:05:14.543Z",
+        "updatedAt": "2022-03-22T10:05:14.543Z"
+    },
+    {
+        "id":5,
+        "title": "Title #5",
+        "description": "Description #5",
+        "published": true,
+        "createdAt": "2022-03-22T10:05:14.543Z",
+        "updatedAt": "2022-03-22T10:05:14.543Z"
+    },
+    {
+        "id":6,
+        "title": "Title #6",
+        "description": "Description #6",
+        "published": true,
+        "createdAt": "2022-03-22T10:05:14.543Z",
+        "updatedAt": "2022-03-22T10:05:14.543Z"
+    },
+    {
+        "id":7,
+        "title": "Title #7",
+        "description": "Description #7",
+        "published": true,
+        "createdAt": "2022-03-22T10:05:14.543Z",
+        "updatedAt": "2022-03-22T10:05:14.543Z"
+    },
+    {
+        "id":8,
+        "title": "Title #8",
+        "description": "Description #8",
+        "published": true,
+        "createdAt": "2022-03-22T10:05:14.543Z",
+        "updatedAt": "2022-03-22T10:05:14.543Z"
+    },
+    {
+        "id":9,
+        "title": "Title #9",
+        "description": "Description #9",
+        "published": true,
+        "createdAt": "2022-03-22T10:05:14.543Z",
+        "updatedAt": "2022-03-22T10:05:14.543Z"
+    },
+    {
+        "id":10,
+        "title": "Title #10",
+        "description": "Description #10",
+        "published": true,
+        "createdAt": "2022-03-22T10:05:14.543Z",
+        "updatedAt": "2022-03-22T10:05:14.543Z"
+    }
+]
+==============================
+update data:- id:2
+{
+    "title": "Title #2 updated",
+    "description": "Description #2 updated",
+    "updatedAt": "2022-03-22T10:05:47.543Z"
+}
